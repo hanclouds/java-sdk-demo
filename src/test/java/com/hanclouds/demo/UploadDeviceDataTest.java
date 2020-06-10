@@ -7,14 +7,11 @@ import com.hanclouds.exception.HanCloudsException;
 import com.hanclouds.req.DeviceDataStreamUploadDataRequest;
 import com.hanclouds.resp.BooleanResponse;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * 产品级鉴权上传设备数据
  */
 public class UploadDeviceDataTest {
-    private static Logger logger = LoggerFactory.getLogger(CreateDeviceTest.class);
 
     static String apiUrl;    //sdk api地址
     static String productKey;    //平台账户下产品key
@@ -57,7 +54,7 @@ public class UploadDeviceDataTest {
             BooleanResponse response = hanCloudsClient.execute(deviceDataStreamUploadDataRequest);
             if (response.isSucceed()) {
                 //成功后处理代码
-                logger.info("响应结果-->{}", JSON.toJSONString(response));
+                System.out.println("响应结果-->" + JSON.toJSONString(response));
             }
         } catch (HanCloudsException e) {
         }

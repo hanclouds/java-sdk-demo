@@ -6,14 +6,11 @@ import com.hanclouds.exception.HanCloudsException;
 import com.hanclouds.req.DeviceCreateRequest;
 import com.hanclouds.resp.DeviceCreateResponse;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * 产品级鉴权创建设备
  */
 public class CreateDeviceTest {
-    private static Logger logger = LoggerFactory.getLogger(CreateDeviceTest.class);
 
     static String apiUrl;  // sdk api地址
     static String productKey;  //平台账户下产品key
@@ -23,7 +20,7 @@ public class CreateDeviceTest {
     static {
         apiUrl = "https://api.hanclouds.com/api/v1";
         productKey = "xxxxxxxx";
-       accessKey = "xxxxxxxx";
+        accessKey = "xxxxxxxx";
         accessSecret = "xxxxxxxxxxxxxxxx";
     }
 
@@ -58,7 +55,7 @@ public class CreateDeviceTest {
             DeviceCreateResponse response = hanCloudsClient.execute(deviceCreateRequest);
             if (response.isSucceed()) {
                 //成功后处理代码
-                logger.info("响应结果-->{}", JSON.toJSONString(response));
+                System.out.println("响应结果-->" + JSON.toJSONString(response));
             }
 
             //response可以获取其它信息，具体请查看方法列表。
